@@ -1,0 +1,48 @@
+.download {
+    @include flex(column, center);
+    margin: 2rem;
+    text-align: center;
+    .download-desc {
+        h2 {
+            color: $colorVeryDarkBlue;
+            margin-bottom: 1rem;
+        }
+        p {
+            color: $colorGrayishBlue;
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+@media (min-width: 43em) {
+    .download {
+        .download-desc {
+            width: 400px;
+        }
+    }
+}
+
+@media (min-width: 62em) {
+    .download {
+        margin: 2rem 0;
+        .download-desc {
+            h2 {
+                color: $colorVeryDarkBlue;
+                margin-bottom: 1rem;
+            }
+            p {
+                color: $colorGrayishBlue;
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}
+
+@media (min-width: 87em) {
+    .download {
+        margin-top: 5rem;
+        .download-desc {
+            width: 500px;
+        }
+    }
+}

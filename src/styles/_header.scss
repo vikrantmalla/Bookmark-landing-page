@@ -1,0 +1,97 @@
+.banner-header {
+    margin-top: 2rem;
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        width: 80%;
+        height: 35%;
+        border-radius: 100px 0 0 100px;
+        background-color: $colorSoftBlue;
+        right: 0;
+        top: 90px;
+        z-index: -1;
+    }
+    .banner {
+        img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            margin-top: 30px;
+        }
+        .banner-desc {
+            margin: 3.5rem 1rem;
+            text-align: center;
+            h1 {
+                margin-bottom: 1rem;
+            }
+            p {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}
+
+@media (min-width: 43em) {
+    .banner-header {
+        &::before {
+            width: 45%;
+            height: 45%;
+            top: 220px;
+        }
+        .banner {
+            img {
+                width: 70vw;
+            }
+            .banner-desc {
+                width: 400px;
+            }
+        }
+    }
+}
+
+@media (min-width: 62em) {
+    .banner-header {
+        &::before {
+            width: 35%;
+            height: 70%;
+            top: 100px;
+        }
+        .banner {
+            margin: 2rem auto;
+            @include flex(row-reverse, space-around);
+            gap: 2rem;
+            width: 90%;
+            img {
+                margin-top: 20px;
+                width: 50vw;
+            }
+            .banner-desc {
+                margin: 0;
+                text-align: left;
+                h1 {
+                    margin-bottom: 1rem;
+                }
+                p {
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 87em) {
+    .banner-header {
+        &::before {
+            width: 40%;
+            height: 80%;
+            top: 100px;
+        }
+        .banner {
+            width: 80%;
+            img {
+                width: 90vw;
+            }
+        }
+    }
+}

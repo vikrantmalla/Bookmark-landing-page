@@ -1,0 +1,99 @@
+.subscribe {
+    background-color: $colorSoftBlue;
+    @include flex(column, center);
+    gap: 1rem;
+    .info {
+        text-align: center;
+        margin: 3rem 2rem;
+        color: #fff;
+        p {
+            color: #fff;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-size: .8rem;
+        }
+        h2 {
+            font-size: 1.5rem;
+        }
+    }
+    form {
+        margin-bottom: 2.5rem;
+        .form-control {
+            margin-bottom: 2rem;
+            position: relative;
+            input {
+                @include flex(row, center);
+                width: 300px;
+                border: none;
+                border-radius: .3rem;
+                padding: 20px 15px;
+                &::placeholder {
+                    color: $colorGrayishBlue;
+                }
+            }
+            i {
+                /* stack the icons on top of eachother */
+                position: absolute;
+                /* move the icons into the textbox */
+                right: 15px;
+                top: 20px;
+                visibility: hidden;
+            }
+            small {
+                position: absolute;
+                background-color: $colorSoftRed;
+                border-bottom-left-radius: .3rem;
+                border-bottom-right-radius: .3rem;
+                width: 100%;
+                padding: .3rem 1rem;
+                text-align: left;
+                color: #fff;
+                font-size: .5rem;
+                top: 55px;
+            }
+        }
+        .form-control.error input {
+            border: 1px solid $colorSoftRed;
+        }
+        .form-control.error i.fa-exclamation-circle {
+            color: $colorSoftRed;
+            visibility: visible;
+        }
+    }
+}
+
+@media (min-width: 62em) {
+    .subscribe {
+        .info {
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #fff;
+            p {
+                margin-bottom: 1rem;
+            }
+        }
+        .form {
+            @include flex(row, center);
+            gap: 1rem;
+            .form-control {
+                margin: 2rem 0;
+                input {
+                    width: 300px;
+                    padding: 15px;
+                    border: none;
+                    margin-bottom: 0;
+                }
+                small {
+                    top: 45px;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 87em) {
+    .subscribe {
+        margin-top: 5rem;
+    }
+}

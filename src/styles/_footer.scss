@@ -1,0 +1,65 @@
+.footer {
+    background-color: $colorVeryDarkBlue;
+    padding: 2rem;
+    @include flex(column, center);
+    gap: 2rem;
+    .footer-left {
+        @include flex(column, center);
+        gap: 1rem;
+        ul {
+            @include flex(column, center);
+            gap: 1rem;
+            text-align: center;
+            color: #fff;
+            list-style: none;
+            li {
+                cursor: pointer;
+                &:hover {
+                    color: $colorSoftRed
+                }
+            }
+        }
+    }
+    .footer-right {
+        @include flex(column, center);
+        gap: 1rem;
+        .social_media {
+            @include flex(row, center);
+            gap: 1rem;
+            i {
+                cursor: pointer;
+                color: #fff;
+                font-size: 1.5rem;
+                &:hover {
+                    color: $colorSoftRed;
+                }
+            }
+        }
+        p {
+            text-align: center;
+            color: #fff;
+        }
+    }
+}
+
+@media (min-width: 62em) {
+    .footer {
+        padding: 2rem 4rem;
+        @include flex(row, space-between);
+        gap: 2rem;
+        .footer-left {
+            @include flex(row, center);
+            gap: 3.5rem;
+            ul {
+                @include flex(row, center);
+            }
+        }
+        .footer-right {
+            align-items: flex-end;
+            .social_media {
+                @include flex(row, center);
+                gap: 2rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,55 @@
+    /*Primary */
+    
+    $colorSoftBlue: hsl(231, 69%, 60%);
+    $colorSoftRed: hsl(0, 94%, 66%);
+    /*Neutral */
+    
+    $colorGrayishBlue: hsl(229, 8%, 60%);
+    $colorVeryDarkBlue: hsl(229, 31%, 21%);
+    $colorNavBackground: rgba(37, 43, 70, .9);
+    h1 {
+        font-weight: 500;
+        font-size: 1.6rem;
+        color: $colorVeryDarkBlue;
+    }
+    
+    h2 {
+        font-weight: 500;
+        font-size: 2rem;
+    }
+    
+    p {
+        font-size: 1rem;
+        color: $colorGrayishBlue;
+        line-height: 1.5rem;
+    }
+    
+    @media (min-width: 43em) {
+        h1 {
+            font-size: 2;
+        }
+    }
+    
+    @media (min-width: 62em) {
+        h1 {
+            font-size: 2.2rem;
+        }
+        h2 {
+            font-size: 1.6rem;
+        }
+        p {
+            font-size: .9rem;
+        }
+    }
+    
+    @media (min-width: 87em) {
+        h1 {
+            font-size: 2.5rem;
+        }
+        h2 {
+            font-size: 2.2rem;
+        }
+        p {
+            font-size: 1.1rem;
+        }
+    }

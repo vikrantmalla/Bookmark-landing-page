@@ -1,0 +1,96 @@
+.cta-button {
+    @include flex(row, center);
+    gap: 1rem;
+    button {
+        padding: .8rem 1rem;
+        margin-bottom: 1rem;
+        border: none;
+        box-shadow: 0 10px 10px 0 hsla(229, 8%, 60%, 0.2);
+        cursor: pointer;
+        border-radius: .2rem;
+        font-weight: 500;
+        font-size: .8rem;
+        &:nth-child(1) {
+            background-color: $colorSoftBlue;
+            color: #fff;
+        }
+        &:hover {
+            background-color: transparent;
+            border: .1rem solid $colorSoftBlue;
+            color: $colorSoftBlue;
+            &:nth-child(2) {
+                border: .1rem solid $colorGrayishBlue;
+                color: $colorGrayishBlue;
+            }
+        }
+    }
+}
+
+.extensionBtn {
+    background-color: $colorSoftBlue;
+    padding: 1rem 2rem;
+    border: none;
+    color: #fff;
+    margin: 0;
+    cursor: pointer;
+    border-radius: .2rem;
+    font-weight: 400;
+    font-size: .8rem;
+    &:hover {
+        background-color: #fff;
+        border: 1px solid $colorSoftBlue;
+        color: $colorSoftBlue;
+    }
+}
+
+.infoBtn {
+    background-color: $colorSoftBlue;
+    padding: 1rem 2rem;
+    border: none;
+    color: #fff;
+    margin: 0;
+    cursor: pointer;
+    border-radius: .2rem;
+    font-weight: 400;
+    font-size: .8rem;
+}
+
+.form_btn {
+    cursor: pointer;
+    padding: 20px 60px;
+    width: 100%;
+    border: none;
+    background-color: $colorSoftRed;
+    color: #fff;
+    border-radius: .4rem;
+    &:hover {
+        background-color: #fff;
+        border: 1px solid $colorSoftRed;
+        color: $colorSoftRed;
+    }
+}
+
+@media (min-width: 62em) {
+    .cta-button {
+        @include flex(row, flex-start);
+        button {
+            margin-bottom: 0;
+        }
+    }
+    .infoBtn {
+        font-size: .8rem;
+    }
+    .form_btn {
+        padding: 15px 30px;
+        border: none;
+    }
+}
+
+@media (min-width: 87em) {
+    .cta-button {
+        button {
+            font-size: 1rem;
+            padding: 1rem;
+        }
+    }
+}

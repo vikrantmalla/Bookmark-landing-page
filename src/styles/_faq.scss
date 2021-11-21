@@ -1,0 +1,128 @@
+.faq {
+    @include flex(column, center);
+    gap: 1rem;
+    margin: 3rem 2rem;
+    .faq-text {
+        text-align: center;
+        h2 {
+            color: $colorVeryDarkBlue;
+            margin-bottom: 1rem;
+        }
+        p {
+            color: $colorGrayishBlue;
+        }
+    }
+    .faq-container {
+        width: 100%;
+        margin: 3rem 0;
+        .faq-section {
+            border-top: 1px solid $colorGrayishBlue;
+            border-bottom: 1px solid $colorGrayishBlue;
+            &:nth-child(2) {
+                border-top: 0;
+            }
+            &:nth-child(3) {
+                border-top: 0;
+            }
+            &:nth-child(4) {
+                border-top: 0;
+            }
+            .question-section {
+                @include flex(row, space-between);
+                cursor: pointer;
+                padding: 1rem;
+                .arrow-icon {
+                    color: $colorSoftBlue;
+                }
+                .active {
+                    color: $colorSoftRed;
+                }
+                h4 {
+                    font-size: .8rem;
+                    color: $colorVeryDarkBlue;
+                    font-weight: 400;
+                    &:hover {
+                        color: $colorSoftRed;
+                    }
+                }
+            }
+            .answer-section {
+                p {
+                    padding: 1rem;
+                    font-size: .8rem;
+                    color: $colorGrayishBlue;
+                    line-height: 1.5rem;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 43em) {
+    .faq {
+        .faq-text {
+            width: 400px;
+        }
+        .faq-container {
+            width: 60%;
+            .faq-section {
+                .question-section {
+                    h4 {
+                        font-size: .8rem;
+                        color: $colorVeryDarkBlue;
+                        font-weight: 400;
+                        &:hover {
+                            color: $colorSoftRed;
+                        }
+                    }
+                }
+                .answer-section {
+                    p {
+                        padding: 1rem;
+                        font-size: .8rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 62em) {
+    .faq {
+        @include flex(column, center);
+        gap: 1rem;
+        .faq-text {
+            width: 400px;
+            text-align: center;
+            h2 {
+                margin-bottom: 1rem;
+            }
+        }
+        .faq-container {
+            width: 50%;
+            .faq-section {
+                padding: .5rem 1rem;
+                .question-section {
+                    h4 {
+                        font-size: 1.3rem;
+                    }
+                }
+                .answer-section {
+                    p {
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 87em) {
+    .faq {
+        margin-top: 8rem;
+        gap: 1rem;
+        .faq-text {
+            width: 500px;
+        }
+    }
+}

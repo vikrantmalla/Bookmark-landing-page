@@ -1,0 +1,159 @@
+.App.active {
+    @media screen and (min-width: 900px) {
+        overflow: unset;
+    }
+    overflow: hidden;
+    margin-bottom: 0;
+    height: 100vh;
+}
+
+.App {
+    @media screen and (min-width: 900px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .nav_dekstop {
+        @media screen and (max-width: 900px) {
+            display: none;
+        }
+        @media (min-width: 62em) {
+            padding: 2rem 4rem;
+        }
+        @media (min-width: 87em) {
+            padding: 2rem 12rem;
+        }
+        @include flex(row, space-between);
+        .logo {
+            margin-top: auto;
+            margin-bottom: auto;
+            width: 148px;
+            text-align: center;
+            height: 1.5rem;
+        }
+        .dekstop_navItems {
+            @include flex(row, center);
+            gap: 2rem;
+            ul {
+                @include flex(row, center);
+                gap: 2rem;
+                list-style: none;
+                text-align: center;
+                li {
+                    cursor: pointer;
+                    color: $colorGrayishBlue;
+                    font-size: .9rem;
+                    text-transform: uppercase;
+                    &:hover {
+                        color: $colorSoftRed
+                    }
+                }
+            }
+            button {
+                border: 0;
+                border-radius: .3rem;
+                background: $colorSoftRed;
+                color: #fff;
+                padding: .6rem 2.1rem;
+                font-size: .9rem;
+                &:hover {
+                    background-color: #fff;
+                    color: $colorSoftRed;
+                    border: 1px solid $colorSoftRed;
+                }
+            }
+        }
+    }
+    transition: 0.5s all ease;
+    position: relative;
+    .nav.active {
+        position: relative;
+        background-color: $colorNavBackground;
+        z-index: 100;
+        i {
+            color: #fff;
+        }
+    }
+    .nav {
+        @media screen and (min-width: 900px) {
+            display: none;
+        }
+        position: relative;
+        padding: 2.8rem 1.8rem 0 1.8rem;
+        @include flex(row, space-between);
+        .ham {
+            cursor: pointer;
+            height: 100%;
+            position: relative;
+        }
+        .nav_active.active {
+            opacity: 1;
+            visibility: visible;
+            background-color: $colorNavBackground;
+        }
+        .nav_active {
+            @media screen and (min-width: 900px) {
+                height: auto;
+            }
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100vh;
+            opacity: 0;
+            visibility: hidden;
+            padding-top: 3rem;
+            position: absolute;
+            left: 0;
+            top: 4.38rem;
+            text-align: center;
+            width: 100%;
+            .mobile_navItems {
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+                color: white;
+                font-size: 1.2rem;
+                letter-spacing: 0.1rem;
+                ul {
+                    list-style: none;
+                    display: flex;
+                    flex-direction: column;
+                    margin: 0 2rem;
+                    li {
+                        border-top: .1rem solid $colorGrayishBlue;
+                        border-bottom: .1rem solid $colorGrayishBlue;
+                        padding: 1rem;
+                        &:nth-child(2) {
+                            border-top: none;
+                        }
+                        &:nth-child(3) {
+                            border-top: none;
+                        }
+                    }
+                }
+                button {
+                    cursor: pointer;
+                    font-weight: 500;
+                    font-size: 1.2rem;
+                    font-family: "Rubik", sans-serif;
+                    color: white;
+                    padding: 0.5rem 8rem;
+                    background-color: Transparent;
+                    background-repeat: no-repeat;
+                    border: .1rem solid white;
+                    border-radius: .3rem;
+                    margin: 0 2rem;
+                }
+                .social-media {
+                    margin-top: 8rem;
+                    i {
+                        font-size: 1.8rem;
+                        &:nth-child(1) {
+                            margin-right: 2rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,210 @@
+.feature {
+    @include flex(column, center);
+    position: relative;
+    &::after {
+        content: '';
+        position: absolute;
+        width: 85%;
+        height: 25%;
+        border-radius: 0 100px 100px 0;
+        background-color: $colorSoftBlue;
+        left: -32px;
+        top: 550px;
+        z-index: -1;
+    }
+    .feature-desc {
+        margin: 3rem 2rem;
+        text-align: center;
+        h2 {
+            margin-bottom: 1rem;
+        }
+        p {
+            margin-bottom: 1rem;
+            line-height: 1.5rem;
+        }
+    }
+    .bloc-tabs {
+        margin: 0 2rem;
+        .tabs-container {
+            .tabs-header {
+                @include flex(column, center);
+                margin-bottom: 5rem;
+                label {
+                    padding: 15px;
+                    text-align: center;
+                    width: 100%;
+                    background: transparent;
+                    cursor: pointer;
+                    color: $colorGrayishBlue;
+                    font-weight: 400;
+                    border-top: 1px solid $colorGrayishBlue;
+                    border-bottom: 1px solid $colorGrayishBlue;
+                    position: relative;
+                    &:nth-child(2) {
+                        border-top: 0;
+                    }
+                    &:nth-child(3) {
+                        border-top: 0;
+                    }
+                }
+                .active {
+                    background: white;
+                    color: $colorSoftRed;
+                    &::before {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        bottom: -1px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        width: calc(50% + 2px);
+                        height: 5px;
+                        background: $colorSoftRed;
+                    }
+                }
+            }
+            .tab-content {
+                width: 100%;
+                margin-top: 2rem;
+                text-align: center;
+                background: transparent;
+                img {
+                    width: 100%;
+                    max-width: 500px;
+                    height: auto;
+                    margin-bottom: 5rem;
+                }
+                .tab-info {
+                    h2 {
+                        margin-bottom: 1rem;
+                    }
+                    p {
+                        line-height: 1.5rem;
+                    }
+                    .infoBtn {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 43em) {
+    .feature {
+        margin-bottom: 8rem;
+        &::after {
+            width: 60%;
+            height: 30%;
+            top: 540px
+        }
+        .feature-desc {
+            width: 400px;
+        }
+        .bloc-tabs {
+            .tabs-container {
+                .tabs-header {
+                    label {
+                        width: 75%;
+                    }
+                }
+                .tab-content {
+                    img {
+                        width: 60vw;
+                        margin-bottom: 6rem;
+                    }
+                    .tab-info {
+                        width: 60%;
+                        margin: 0 auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 62em) {
+    .feature {
+        &::after {
+            width: 40%;
+            height: 45%;
+            left: 0;
+            top: 420px;
+        }
+        .feature-desc {
+            width: 500px;
+            h2 {
+                margin-bottom: 1rem;
+            }
+            p {
+                margin-bottom: 1rem;
+            }
+        }
+        .bloc-tabs {
+            .tabs-container {
+                .tabs-header {
+                    @include flex(row, center);
+                    margin-bottom: 5rem;
+                    label {
+                        width: 20%;
+                        &:nth-child(1) {
+                            border-top: 0;
+                        }
+                    }
+                    .active {
+                        &::before {
+                            width: calc(100% + 2px);
+                            height: 5px;
+                        }
+                    }
+                }
+                .tab-content {
+                    @include flex(row, center);
+                    width: 90%;
+                    margin: 0 auto;
+                    gap: 2rem;
+                    img {
+                        width: 40vw;
+                        margin-bottom: 0;
+                    }
+                    .tab-info {
+                        text-align: left;
+                        width: 40%;
+                        p {
+                            margin: 0;
+                            margin-bottom: 1.2rem;
+                        }
+                        .infoBtn {
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 87em) {
+    .feature {
+        margin-top: 2.5rem;
+        &::after {
+            width: 40%;
+            height: 50%;
+            left: 0;
+            top: 450px;
+        }
+        .bloc-tabs {
+            .tabs-container {
+                .tabs-header {
+                    label {
+                        font-size: 1.3rem;
+                    }
+                }
+                .tab-content {
+                    width: 80%;
+                    gap: 2.5rem;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,70 @@
+.extension-cards {
+    @include flex(column, center);
+    gap: 2rem;
+    margin: 0;
+    .browser-card {
+        width: 70vw;
+        max-width: 250px;
+        border-radius: 0 0 10px 10px;
+        box-shadow: 0 20px 20px 0 $colorGrayishBlue;
+        overflow: hidden;
+        padding: 20px;
+        img {
+            width: 80px;
+            margin: 2rem;
+        }
+        .extension-add {
+            h3 {
+                margin-bottom: .6rem;
+                font-size: 1.2rem;
+                font-weight: 700;
+                color: $colorVeryDarkBlue;
+            }
+            p {
+                margin-bottom: 3rem;
+                font-size: .8rem;
+                font-weight: 400;
+                color: $colorGrayishBlue;
+                position: relative;
+                &::after {
+                    content: url(../assets/images/bg-dots.svg);
+                    position: absolute;
+                    top: 35px;
+                    left: 0;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 43em) {
+    .extension-cards {
+        margin: 5rem 0;
+    }
+}
+
+@media (min-width: 62em) {
+    .extension-cards {
+        @include flex(row, center);
+        gap: 1.5rem;
+        margin: 0;
+        .browser-card {
+            &:nth-child(2) {
+                margin-top: 6rem;
+            }
+            &:nth-child(3) {
+                margin-top: 12rem;
+            }
+            .extension-add {
+                h2 {
+                    margin-bottom: .8rem;
+                    font-size: 1.2rem;
+                }
+                p {
+                    margin-bottom: 3rem;
+                    font-size: .8rem;
+                }
+            }
+        }
+    }
+}
